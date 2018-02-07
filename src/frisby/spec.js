@@ -169,7 +169,7 @@ class FrisbySpec {
   /**
    * POST convenience wrapper
    */
-  post(url, params) {
+  post(url, params = {}) {
     return this._requestWithBody('POST', url, params);
   }
 

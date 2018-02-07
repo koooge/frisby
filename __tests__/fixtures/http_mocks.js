@@ -81,6 +81,19 @@ const mocks = {
       .reply(204);
   },
 
+
+  createUser1() {
+    return nock(mockHost)
+      .post('/users', {
+        email: 'user@example.com',
+        password: 'password'
+      })
+      .reply(201, {
+        id: 2,
+        email: 'user@example.com'
+      });
+  },
+
   createUser2() {
     return nock(mockHost)
       .post('/users', {

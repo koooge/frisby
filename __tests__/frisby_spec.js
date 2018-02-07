@@ -48,6 +48,14 @@ describe('Frisby', function() {
       .done(doneFn);
   });
 
+  it('should treat default param', (doneFn) => {
+    mocks.use(['createUser2']);
+
+    frisby.post(testHost + '/users')
+      .expect('status', 201)
+      .done(doneFn);
+  });
+
   it('should allow custom expect handlers to be registered and used', function (doneFn) {
     mocks.use(['getUser1']);
 
